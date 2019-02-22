@@ -13,6 +13,7 @@ module.exports = (robot) ->
 
   #初期化時にSlackにメッセージ表示
   robot.send({room: "#08_tech_lightning"}, "I'm ready!")
+  console.log("I'm ready!")
 
 
 createLunchGroups = (regularTeams, lunchGroups)->
