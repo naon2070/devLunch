@@ -8,11 +8,11 @@ module.exports = (robot) ->
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
-      robot.send {room: "#dev_ミニランチボット開発"}, createMessage(week_check)
+      robot.send {room: "#08_tech_lightning"}, createMessage(week_check)
   )
 
   #初期化時にSlackにメッセージ表示
-  robot.send({room: "#dev_ミニランチボット開発"}, "I'm ready")
+  robot.send({room: "#08_tech_lightning"}, "I'm ready!")
 
 
 createLunchGroups = (regularTeams, lunchGroups)->
