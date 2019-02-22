@@ -11,6 +11,9 @@ module.exports = (robot) ->
       robot.send {room: "#dev_ミニランチボット開発"}, createMessage(week_check)
   )
 
+  #初期化時にSlackにメッセージ表示
+  robot.send({room: "#dev_ミニランチボット開発"}, "I'm ready")
+
 
 createLunchGroups = (regularTeams, lunchGroups)->
   counter = 0
