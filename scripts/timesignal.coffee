@@ -3,7 +3,7 @@ cronJob = require('cron').CronJob
 module.exports = (robot) ->
 
   cronjob = new cronJob(
-    cronTime: "0 * * * * *"    # 実行する時間
+    cronTime: "0 0 11 * * 3"    # 実行する時間
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
