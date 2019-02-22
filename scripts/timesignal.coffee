@@ -2,12 +2,13 @@ cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
 
+  week_check = [true]
   cronjob = new cronJob(
-    cronTime: "0 * * * * *"    # 実行する時間
+    cronTime: "0 0 11 * * 3"    # 実行する時間
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
-      robot.send {room: "#dev_ミニランチボット開発"}, createMessage()
+      robot.send {room: "#dev_ミニランチボット開発"}, createMessage(week_check)
   )
 
 
@@ -34,30 +35,50 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
   lunchGroups[index].push(pickedMember)
 
 
-createMessage = ()->
-  #初期チームの状態をセット
-  boss = [ "片岡さん" ]
-  teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん" ]
-  teamTC =    [ "中田さん", "三浦さん", "西森さん", "浦田さん" ]
-  regularTeams = [ teamTM, teamTC, boss ]
+createMessage = (week_check)->
 
-  # 作成するランチグループの数をセットし、その数だけメンバーが入るランチグループの箱（配列）の作成
-  lunchGroupsNumber = 2 #作成するグループ数は変えるには、ここの数字を変える
-  lunchGroups = []
-  i = 0
-  while i < lunchGroupsNumber
-    lunchGroups.push([])
-    i++
+  if week_check[0]
+    #初期チームの状態をセット
+    boss = [ "片岡さん" ]
+    teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん" ]
+    teamTC =    [ "中田さん", "三浦さん", "西森さん", "浦田さん" ]
+    regularTeams = [ teamTM, teamTC, boss ]
 
-  #当日のランチグループを作成
-  createLunchGroups(regularTeams, lunchGroups)
+    # 作成するランチグループの数をセットし、その数だけメンバーが入るランチグループの箱（配列）の作成
+    lunchGroupsNumber = 2 #作成するグループ数は変えるには、ここの数字を変える
+    lunchGroups = []
+    i = 0
+    while i < lunchGroupsNumber
+      lunchGroups.push([])
+      i++
 
-  #Slackに配信するbotのメッセージを作成
-  message = ":yatta:*＼Yay! Today's shuffle lunch day!／*:yatta:\n\n\n\n今日は開発メンバーのシャッフルランチの日だよ！\n気になる今日のランチグループは下記だよ！\n-----------------------------------------------------------\n"
-  for lunchGroup, index in lunchGroups
-    message += "グループ#{index + 1}: #{lunchGroup.toString()}\n"
-  message += '-----------------------------------------------------------'
+    #当日のランチグループを作成
+    createLunchGroups(regularTeams, lunchGroups)
 
-  console.log(message)
-  return message
+    #Slackに配信するbotのメッセージを作成
+    message = ":yatta:*＼Yay! Today's Shuffle lunch day!／*:yatta:\n\n\n\n今日は開発メンバーのシャッフルランチの日だよ！\n気になる今日のランチグループは下記だよ！\n-----------------------------------------------------------\n"
+    for lunchGroup, index in lunchGroups
+      message += "グループ#{index + 1}: #{lunchGroup.toString()}\n"
+    message += '-----------------------------------------------------------'
+
+    week_check[0] = !week_check[0]
+    console.log(message)
+    return message
+
+  else
+    week_check[0] = !week_check[0]
+    message = '今日はTechDiscussionなので、シャッフルランチはお休みですm(__)m'
+
+    console.log(message)
+    return message
+
+
+# 動作チェック用
+# do ->
+#   week_check = [true]
+#   createMessage(week_check)
+#   createMessage(week_check)
+#   createMessage(week_check)
+#   createMessage(week_check)
+#   return
 
