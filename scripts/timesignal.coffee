@@ -11,8 +11,6 @@ module.exports = (robot) ->
     )
 
 
-
-
 createLunchGroups = (regularTeams, lunchGroups)->
   counter = 0
   for team in regularTeams
@@ -30,13 +28,10 @@ createLunchGroups = (regularTeams, lunchGroups)->
       counter++
 
 
-
-
 addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
   #全てのランチグループのメンバー数が均等になるように、順番にランチグループを指定し、メンバーを追加
   index = counter % lunchGroups.length
   lunchGroups[index].push(pickedMember)
-
 
 
 createMessage = ()->
