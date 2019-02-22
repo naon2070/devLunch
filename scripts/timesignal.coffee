@@ -3,7 +3,7 @@ cronJob = require('cron').CronJob
 module.exports = (robot) ->
 
   cronjob = new cronJob(
-    cronTime: "0 0 11 * * 3"    # 実行する時間
+    cronTime: "0 * * * * *"    # 実行する時間
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
@@ -53,8 +53,7 @@ createMessage = ()->
   createLunchGroups(regularTeams, lunchGroups)
 
   #Slackに配信するbotのメッセージを作成
-  message = '
-  今日は開発メンバーのシャッフルランチの日だよ！\n気になる今日のランチグループは下記だよ！\n-----------------------------------------------------------\n'
+  message = ":yatta:*＼Yay! Today's shuffle lunch day!／*:yatta:\n\n\n\n今日は開発メンバーのシャッフルランチの日だよ！\n気になる今日のランチグループは下記だよ！\n-----------------------------------------------------------\n"
   for lunchGroup, index in lunchGroups
     message += "グループ#{index + 1}: #{lunchGroup.toString()}\n"
   message += '-----------------------------------------------------------'
