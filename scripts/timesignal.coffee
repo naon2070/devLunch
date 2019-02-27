@@ -13,7 +13,7 @@ module.exports = (robot) ->
   )
 
   #初期化時にSlackにメッセージ表示
-  robot.send({room: "#08_tech_lightning"}, "I'm ready!")
+  robot.send({room: "#08_tech_lightning"}, createMessage(week_check))
   console.log("I'm ready!")
 
 
@@ -87,4 +87,3 @@ createMessage = (week_check)->
 #   createMessage(week_check)
 #   createMessage(week_check)
 #   return
-
