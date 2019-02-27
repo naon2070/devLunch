@@ -13,7 +13,7 @@ module.exports = (robot) ->
   )
 
   #初期化時にSlackにメッセージ表示
-  console.log("I'm ready!")
+  console.log("I'm ready! and this weak is #{week_check}")
 
 
 createLunchGroups = (regularTeams, lunchGroups)->
@@ -80,9 +80,10 @@ createMessage = (week_check)->
 
 # 動作チェック用
 # do ->
-#   week_check = [true]
-#   createMessage(week_check)
-#   createMessage(week_check)
-#   createMessage(week_check)
-#   createMessage(week_check)
-#   return
+  # week_check = [true]
+  # console.log("I'm ready! and this weak is #{week_check}")
+  # createMessage(week_check)
+  # createMessage(week_check)
+  # createMessage(week_check)
+  # createMessage(week_check)
+  # return
