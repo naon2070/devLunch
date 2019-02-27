@@ -3,9 +3,9 @@ cronJob = require('cron').CronJob
 module.exports = (robot) ->
 
   #ランチは隔週なので、次回をランチにする場合はtrue、ランチを休みにする場合はfalseにしておく
-  week_check = [true]
+  week_check = [false]
   cronjob = new cronJob(
-    cronTime: "0 0 11 * * 3"    # 実行する時間
+    cronTime: "0 0 10 * * wed"    # 実行する時間
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
@@ -13,7 +13,6 @@ module.exports = (robot) ->
   )
 
   #初期化時にSlackにメッセージ表示
-  robot.send({room: "#08_tech_lightning"}, createMessage(week_check))
   console.log("I'm ready!")
 
 
