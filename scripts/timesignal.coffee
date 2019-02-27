@@ -2,6 +2,7 @@ cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
 
+  #ランチは隔週なので、次回をランチにする場合はtrue、ランチを休みにする場合はfalseにしておく
   week_check = [true]
   cronjob = new cronJob(
     cronTime: "0 0 11 * * 3"    # 実行する時間
@@ -46,7 +47,8 @@ createMessage = (week_check)->
     boss = [ "片岡さん" ]
     teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん" ]
     teamTC =    [ "中田さん", "三浦さん", "西森さん", "浦田さん" ]
-    regularTeams = [ teamTM, teamTC, boss ]
+    teamCoachStand = [ "福田さん" ]
+    regularTeams = [ teamTM, teamTC, teamCoachStand, boss ]
 
     # 作成するランチグループの数をセットし、その数だけメンバーが入るランチグループの箱（配列）の作成
     lunchGroupsNumber = 2 #作成するグループ数は変えるには、ここの数字を変える
