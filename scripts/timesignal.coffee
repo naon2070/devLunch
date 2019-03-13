@@ -5,7 +5,7 @@ module.exports = (robot) ->
   #ランチは隔週なので、次回をランチにする場合はtrue、ランチを休みにする場合はfalseにしておく
   week_check = [true]
   cronjob = new cronJob(
-    cronTime: "0 0 10 10 * wed"    # 実行する時間
+    cronTime: "0 45 10 * * wed"    # 実行する時間
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
