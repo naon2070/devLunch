@@ -4,9 +4,6 @@ module.exports = (robot) ->
   #初期化時にコンソールにログを表示
   console.log("I'm ready!")
 
-  #初期化時にテスト用のチャンネルにメッセージを表示
-  robot.send {room: '#dev_chat_bot_test'}, "Hey guys!!:yatta:\n\nもしシャッフルが必要なら、Meに『シャッフル』と話しかけてくれ！\n\nもし今日がシャッフルランチじゃなければMeのことは無視して大丈夫だ！:sunglasses:"
-
   # 毎週水曜日にリマインドを送信
   cronjob = new cronJob(
     cronTime: "0 0 10 * * wed"    # 実行する時間
