@@ -10,7 +10,7 @@ module.exports = (robot) ->
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
-      robot.send {room: '#08_tech_lightning'}, "Hey guys!!:yatta:\n\nもしシャッフルが必要なら、Meに『シャッフル』と話しかけてくれ！\n\nもし今日がシャッフルランチじゃなければMeのことは無視して大丈夫だ！:sunglasses:"
+      robot.send {room: '#08_tech_lightning '}, "Hey guys!!:yatta:\n\nもしシャッフルが必要なら、Meに『シャッフル』と話しかけてくれ！\n\nもし今日がシャッフルランチじゃなければMeのことは無視して大丈夫だ！:sunglasses:"
   )
 
 
@@ -65,9 +65,8 @@ createMessage = () ->
     #初期チームの状態をセット
     boss = [ "片岡さん" ]
     teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん" ]
-    teamTC =    [ "中田さん", "三浦さん", "西森さん", "浦田さん" ]
-    teamCoachStand = [ "福田さん" ]
-    regularTeams = [ teamTM, teamTC, teamCoachStand, boss ]
+    teamTC =    [ "中田さん", "三浦さん", "福田さん", "浦田さん", "山田さん" ]
+    regularTeams = [ teamTM, teamTC, boss ]
     shuffledRegTeams = []
 
     # regularTeams内の各チームの順番をバラバラにして、shuffledRegTeamsの配列に入れる
