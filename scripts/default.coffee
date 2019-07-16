@@ -64,8 +64,8 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
 createMessage = () ->
     #初期チームの状態をセット
     boss = [ "片岡さん" ]
-    teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん" ]
-    teamTC =    [ "中田さん", "三浦さん", "福田さん", "浦田さん", "山田さん" ]
+    teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん", "山田さん" ]
+    teamTC =    [ "中田さん", "三浦さん", "福田さん", "浦田さん", "勝山さん" ]
     regularTeams = [ teamTM, teamTC, boss ]
     shuffledRegTeams = []
 
