@@ -10,7 +10,7 @@ module.exports = (robot) ->
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
-      robot.send {room: '#dev_chat_bot_test'}, "Hey guys!!:yatta:\n\nIf you need a shuffle for lunch, talk to me \"shuffle\".\n\nIf today is not a shuffle lunch, just ignore me.:sunglasses:"
+      robot.send {room: '#08_tech_lightning'}, "Hey guys!!:yatta:\n\nIf you need a shuffle for lunch, talk to me \"shuffle\".\n\nIf today is not a shuffle lunch, just ignore me.:sunglasses:"
   )
 
 
