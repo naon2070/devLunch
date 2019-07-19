@@ -23,7 +23,7 @@ module.exports = (robot) ->
       setTimeout ->
         res.send "."
         setTimeout ->
-          res.send "OK, here you go!"
+          res.send "Ready!"
           setTimeout ->
             res.send createMessage()
           , 1000
@@ -63,9 +63,9 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
 
 createMessage = () ->
     #初期チームの状態をセット
-    boss = [ "片岡さん" ]
-    teamTM =  [ "丸下さん", "井上さん", "高井さん", "瀬尾さん", "山田さん" ]
-    teamTC =    [ "中田さん", "三浦さん", "福田さん", "浦田さん", "勝山さん" ]
+    boss = [ "Masato" ]
+    teamTM =  [ "Naoki", "Dragon", "Yuto", "Kyohey", "Kanako" ]
+    teamTC =    [ "Yoshi", "Kaori", "Kosuke", "Koji", "Suguru" ]
     regularTeams = [ teamTM, teamTC, boss ]
     shuffledRegTeams = []
 
