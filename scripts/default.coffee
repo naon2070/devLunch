@@ -10,20 +10,20 @@ module.exports = (robot) ->
     start:    true                # すぐにcronのjobを実行するかどうか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                    # 実行処理
-      robot.send {room: '#08_tech_lightning '}, "Hey guys!!:yatta:\n\nもしシャッフルが必要なら、Meに『シャッフル』と話しかけてくれ！\n\nもし今日がシャッフルランチじゃなければMeのことは無視して大丈夫だ！:sunglasses:"
+      robot.send {room: '#dev_chat_bot_test'}, "Hey guys!!:yatta:\n\nIf you need a shuffle for lunch, talk to me \"shuffle\".\n\nIf today is not a shuffle lunch, just ignore me.:sunglasses:"
   )
 
 
 
   #-------------- ここ以下は対話用----------------------------------
-  robot.respond /シャッフル/i, (res) ->
-    res.send "OK! シャッフルだな！任せてくれ！！"
+  robot.respond /(シャッフル|shuffle)/i, (res) ->
+    res.send "OK! I'll shuffle now!"
     setTimeout ->
       res.send "."
       setTimeout ->
         res.send "."
         setTimeout ->
-          res.send "OK, ready!"
+          res.send "OK, here you go!"
           setTimeout ->
             res.send createMessage()
           , 1000
@@ -33,7 +33,7 @@ module.exports = (robot) ->
 
 
   robot.respond /((お腹|おなか|腹|はら)(空いた|すいた|減った|へった)|hungry)/i, (res) ->
-    res.send 'シャッフルが必要かい？'
+    res.send 'you need a shuffle？'
 
 
 
@@ -89,7 +89,7 @@ createMessage = () ->
     #Slackに配信するbotのメッセージを作成
     message = "*Here you go!*:yatta:\n-----------------------------------------------------------\n"
     for lunchGroup, index in lunchGroups
-      message += "【グループ#{index + 1}】 #{lunchGroup.toString()}\n"
+      message += "【Group#{index + 1}】 #{lunchGroup.toString()}\n"
     message += '-----------------------------------------------------------'
 
     return message
