@@ -17,7 +17,7 @@ module.exports = (robot) ->
 
   #-------------- ここ以下は対話用----------------------------------
   robot.respond /(シャッフル|shuffle)/i, (res) ->
-    res.send "OK! I'll shuffle now!"
+    res.send "OK! will shuffle now!"
     setTimeout ->
       res.send "."
       setTimeout ->
@@ -89,7 +89,7 @@ createMessage = () ->
     #Slackに配信するbotのメッセージを作成
     message = "*Here you go!*:yatta:\n-----------------------------------------------------------\n"
     for lunchGroup, index in lunchGroups
-      message += "【Group#{index + 1}】 #{lunchGroup.toString()}\n"
+      message += "【Group#{index + 1}】 #{lunchGroup.join(', ')}\n"
     message += '-----------------------------------------------------------'
 
     return message
