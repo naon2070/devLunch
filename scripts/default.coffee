@@ -35,6 +35,9 @@ module.exports = (robot) ->
   robot.respond /((お腹|おなか|腹|はら)(空いた|すいた|減った|へった)|hungry)/i, (res) ->
     res.send 'you need a shuffle？'
 
+  robot.respond /(おすすめ|recommend|店|store|restaurant)/i, (res) ->
+    res.send 'Defenitely Chinkashisai.'
+
 
 
 
@@ -64,7 +67,7 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
 createMessage = () ->
     #初期チームの状態をセット
     boss = [ "Masato" ]
-    teamTM =  [ "Naoki", "Dragon", "Yuto", "Kyohey", "Kanako" ]
+    teamTM =  [ "Naoki", "Dragon", "Yuto", "Kyohey", "Kanako", "BigCircle" ]
     teamTC =    [ "Yoshi", "Kaori", "Kosuke", "Koji", "Suguru" ]
     regularTeams = [ teamTM, teamTC, boss ]
     shuffledRegTeams = []
@@ -76,7 +79,7 @@ createMessage = () ->
       regularTeams.splice(randNum, 1)
 
     # 作成するランチグループの数をセットし、その数だけメンバーが入るランチグループの箱（配列）の作成
-    lunchGroupsNumber = 2 #作成するグループ数は変えるには、ここの数字を変える
+    lunchGroupsNumber = 3 #作成するグループ数は変えるには、ここの数字を変える
     lunchGroups = []
     i = 0
     while i < lunchGroupsNumber
