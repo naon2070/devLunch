@@ -66,9 +66,9 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
 
 createMessage = () ->
     #初期チームの状態をセット
-    boss = [ "MASA-T" ]
+    boss = [ "Masa-T" ]
     teamTM =  [ "Naoki", "Yuto", "Kanako", "BigCircle", "Dragon" ]
-    teamTC =    [ "Koji", "Suguru", "Nori", "MASA-C" ]
+    teamTC =    [ "Koji", "Suguru", "Nori", "Masa-C" ]
     teamTP = ["Kyohey", "Yoshi", "Kaori", "Kosuke"]
 
     # 全チームを下記Arrayに格納する
