@@ -83,7 +83,7 @@ createMessage = () ->
       regularTeams.splice(randNum, 1)
 
     # 作成するランチグループの数をセットし、その数だけメンバーが入るランチグループの箱（配列）の作成
-    lunchGroupsNumber = 3 #作成するグループ数は変えるには、ここの数字を変える
+    lunchGroupsNumber = 4 #作成するグループ数は変えるには、ここの数字を変える
     lunchGroups = []
     i = 0
     while i < lunchGroupsNumber
