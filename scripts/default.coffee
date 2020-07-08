@@ -67,10 +67,10 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
 createMessage = () ->
     #初期チームの状態をセット
     boss = [ "Masa-T" ]
-    teamTM =  [ "Naoki", "Yuto", "BigCircle", "Dragon", "Ryosuke" ]
+    teamTM =  [ "Naoki", "Yuto", "BigCircle", "Dragon", "Ryosuke", "Kaz-C", "Q-Me" ]
     teamTC =    [ "Koji", "Suguru", "Nori", "Masa-C" ]
     teamTP = ["Kyohey", "Kosuke", "Nobu"]
-    notComeOften = ["Kanako", "Shinsuke", "AG", "Kaorin"]
+    notComeOften = ["Kanako", "AG", "Kaorin"]
 
     # 全チームを下記Arrayに格納する
     regularTeams = [ boss, teamTM, teamTC, teamTP, notComeOften ]
@@ -83,7 +83,7 @@ createMessage = () ->
       regularTeams.splice(randNum, 1)
 
     # 作成するランチグループの数をセットし、その数だけメンバーが入るランチグループの箱（配列）の作成
-    lunchGroupsNumber = 4 #作成するグループ数は変えるには、ここの数字を変える
+    lunchGroupsNumber = 3 #作成するグループ数は変えるには、ここの数字を変える
     lunchGroups = []
     i = 0
     while i < lunchGroupsNumber
