@@ -68,7 +68,7 @@ createMessage = () ->
     #初期チームの状態をセット
     boss = [ "Masa-T" ]
     teamTM =  [ "Naoki", "Yuto", "BigCircle", ":dragon_face:", ":ecg:", "Kaz-C", "Masanori" ]
-    teamTC =    [ "Koji", "Sugu-Roo", "Nori", "Masa-C" ]
+    teamTC =    [ "Koji", ":katsuyama_mentor:", "Nori", "Masa-C" ]
     teamTP = ["Kyohey", "Kosuke", "Nobu"]
     subcontractor = ["Atsu-C", "Shun-GO"]
     notComeOften = ["Kanako", "AG", "Kaorin"]
