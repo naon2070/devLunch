@@ -66,15 +66,13 @@ addMemberToLunchGroup = (counter, pickedMember, lunchGroups)->
 
 createMessage = () ->
     #初期チームの状態をセット
-    boss = [ "Masa-T" ]
-    teamTM =  [ "Naoki", "Yuto", "BigCircle", ":dragon_face:", ":ecg:", "Kaz-C", "Masanori" ]
-    teamTC =    [ "Koji", ":katsuyama_mentor:", "Nori", "Masa-C" ]
-    teamTP = ["Kyohey", "Kosuke", "Nobu"]
-    subcontractor = ["Atsu-C", "Shun-GO"]
-    notComeOften = ["Kanako", "AG", "Kaorin"]
+    boss = [ "Masa-T", "AG" ]
+    teamTM =  [ "Naoki", "Yuto", "BigCircle", ":dragon_face:", ":ecg:", "Kaz-C", "Masanori", "Kyohey", "Tacchan" ]
+    teamTC =    [ "Koji", ":katsuyama_mentor:", "Nori", "Masa-C", "Kosuke", "Nobu" ]
+    notComeOften = ["Kaorin"]
 
     # 全チームを下記Arrayに格納する
-    regularTeams = [ boss, teamTM, teamTC, teamTP, subcontractor, notComeOften ]
+    regularTeams = [ boss, teamTM, teamTC, notComeOften ]
     shuffledRegTeams = []
 
     # regularTeams内の各チームの順番をバラバラにして、shuffledRegTeamsの配列に入れる
